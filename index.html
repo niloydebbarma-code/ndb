@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Niloy Deb Barma - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Emoji Rain -->
+    <div class="emoji-rain"></div>
+
+    <header>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Projects</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <h1>Welcome to My Portfolio</h1>
+        <p>Action-packed, thrilling experiences await you.</p>
+        <a href="#about" class="cta-btn">Discover More</a>
+    </section>
+
+    <section class="about" id="about">
+        <h2>About Me</h2>
+        <p>I am Niloy Deb Barma, a passionate developer with a focus on AI and web technologies.</p>
+        <img src="https://via.placeholder.com/600x400" alt="Niloy Deb Barma">
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Niloy Deb Barma | All Rights Reserved</p>
+        <ul>
+            <li><a href="https://www.instagram.com">Instagram</a></li>
+            <li><a href="https://www.linkedin.com">LinkedIn</a></li>
+            <li><a href="mailto:info@niloy.com">Email</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        // Emojis falling effect
+        const emojiRain = document.querySelector('.emoji-rain');
+        const emojis = ['🎉', '🎈', '🌟', '💐', '💖', '🥳', '✨', '🎂', '💫', '🌸', '💝', '🥂'];
+
+        function createEmoji() {
+            const emoji = emojis[Math.floor(Math.random() * emojis.length)];
+            const emojiElement = document.createElement('span');
+            emojiElement.textContent = emoji;
+
+            // Randomize the start position and speed
+            emojiElement.style.left = `${Math.random() * 100}vw`;
+            emojiElement.style.animationDuration = `${Math.random() * 2 + 3}s`;
+
+            emojiRain.appendChild(emojiElement);
+
+            // Remove the emoji once it falls off the screen
+            setTimeout(() => {
+                emojiElement.remove();
+            }, 5000); // Match animation duration
+        }
+
+        // Create emojis every 100ms
+        setInterval(createEmoji, 100);
+    </script>
+</body>
+</html>
